@@ -22,7 +22,7 @@ class TestDocument {
 	AvisRepository avisRepository;
 
 	@Test
-	void test01_save_avis_sans_commentaire_cours() {
+	void test01_save_avis() {
 		Avis avis = Avis
 				.builder()
 				.note(4)
