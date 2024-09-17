@@ -28,4 +28,6 @@ public class Avis {
 	
 	@Field(name = "date")
 	private LocalDateTime date;
+	
+	private Client client;
 }
