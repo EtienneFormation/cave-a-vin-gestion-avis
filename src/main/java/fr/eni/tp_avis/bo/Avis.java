@@ -3,6 +3,7 @@ package fr.eni.tp_avis.bo;
 import java.time.LocalDateTime;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
@@ -30,4 +31,8 @@ public class Avis {
 	private LocalDateTime date;
 	
 	private Client client;
+	
+	@DBRef
+	@Field(name = "bottle_id")
+	private Bouteille bouteille;
 }
