@@ -43,7 +43,7 @@ public class TestAssociationAvisBouteille {
 						.pseudo("bobeponge@email.fr")
 						.quantiteCommandee(11)
 						.build())
-				.bouteille(bouteille)
+				.bouteille(bouteille) // association
 				.build();
 		
 		final Avis avisDB = avisRepository.save(avis);
