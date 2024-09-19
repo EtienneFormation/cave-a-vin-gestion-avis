@@ -22,6 +22,8 @@ public interface AvisRepository extends MongoRepository<Avis, String> {
 	List<Avis> findByClientPseudo(String pseudo);
 	List<Avis> findByClientQuantiteCommandeeGreaterThan(int quantite);
 
-	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
-	List<Avis> findByDateBetween(LocalDateTime start, LocalDateTime end);
+
+	List<Avis> findByDateBetween(
+			@DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime start,
+			@DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime end);
 }
