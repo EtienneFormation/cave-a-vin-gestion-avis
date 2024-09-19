@@ -11,9 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import fr.eni.tp_avis.dal.AvisRepository;
-import lombok.extern.slf4j.Slf4j;
 
-@Slf4j
 @SpringBootTest
 @TestMethodOrder(MethodOrderer.MethodName.class)
 class TestAssociationAvisClient {
@@ -47,7 +45,7 @@ class TestAssociationAvisClient {
 		final Client clientDB = avisDB.getClient();
 		assertThat(clientDB).isNotNull();
 		assertThat(clientDB).isEqualTo(client);
-		
-		log.info(avisDB.toString());
+
+		System.out.println(avisDB.toString());
 	}
 }

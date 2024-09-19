@@ -29,34 +29,25 @@ class DataPourRequetes {
 
 		listeBouteilles.add(Bouteille
 				.builder()
-				.id(BouteilleId
-						.builder()
-						.idBouteille(18298)
-						.idRegion(3)
-						.idCouleur(1)
-						.build())
+				.id(18298)
+				.idRegion(3)
+				.idCouleur(1)
 				.nom("Vin ENI Edition")
 				.build());
 
 		listeBouteilles.add(Bouteille
 				.builder()
-				.id(BouteilleId
-						.builder()
-						.idBouteille(1298)
-						.idRegion(3)
-						.idCouleur(2)
-						.build())
+				.id(1298)
+				.idRegion(3)
+				.idCouleur(2)
 				.nom("Vin ENI Service")
 				.build());
 
 		listeBouteilles.add(Bouteille
 				.builder()
-				.id(BouteilleId
-						.builder()
-						.idBouteille(1999)
-						.idRegion(2)
-						.idCouleur(3)
-						.build())
+				.id(1999)
+				.idRegion(2)
+				.idCouleur(3)
 				.nom("Vin ENI Ecole")
 				.build());
 
@@ -162,16 +153,13 @@ class DataPourRequetes {
 	void test_par_bouteille() {
 		Bouteille bouteille = Bouteille
 				.builder()
-				.id(BouteilleId
-						.builder()
-						.idBouteille(18298)
-						.idRegion(3)
-						.idCouleur(1)
-						.build())
+				.id(18298)
+				.idRegion(3)
+				.idCouleur(1)
 				.nom("Vin ENI Edition")
 				.build();
 		
-		List<Avis> avis = avisRepository.findByBouteille(bouteille);
+		List<Avis> avis = avisRepository.findByBouteilleId(bouteille.getId());
 		System.out.println("Avis pour la bouteille 18298 : " + avis.size());
 		System.out.println(avis);
 	}

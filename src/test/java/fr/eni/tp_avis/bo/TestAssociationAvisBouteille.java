@@ -11,9 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import fr.eni.tp_avis.dal.AvisRepository;
 import fr.eni.tp_avis.dal.BouteilleRepository;
-import lombok.extern.slf4j.Slf4j;
 
-@Slf4j
 @SpringBootTest
 public class TestAssociationAvisBouteille {
 	@Autowired
@@ -24,13 +22,7 @@ public class TestAssociationAvisBouteille {
 	
 	@Test
 	void test01_inserer_avis_bouteille() {
-		BouteilleId bouteilleId = BouteilleId.builder()
-				.idBouteille(2298)
-				.idRegion(5)
-				.idCouleur(1)
-				.build();
-		
-		Optional<Bouteille> bouteilleOpt = bouteilleRepository.findById(bouteilleId);
+		Optional<Bouteille> bouteilleOpt = bouteilleRepository.findById(2298);
 		assertThat(bouteilleOpt.isPresent()).isTrue();
 		
 		Bouteille bouteille = bouteilleOpt.get();
@@ -56,7 +48,7 @@ public class TestAssociationAvisBouteille {
 		final Bouteille bouteilleDB = avisDB.getBouteille();
 		assertThat(bouteilleDB).isNotNull();
 		assertThat(bouteilleDB).isEqualTo(bouteille);
-		
-		log.info(avisDB.toString());
+
+		System.out.println(avisDB.toString());
 	}
 }

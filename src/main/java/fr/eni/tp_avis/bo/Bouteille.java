@@ -16,7 +16,14 @@ import lombok.NoArgsConstructor;
 @Document(collection = "bottles")
 public class Bouteille {
 	@Id
-	private BouteilleId id;
+	@Field(name = "bottle_id")
+	private int id;
+
+	@Field(name = "region_id")
+	private int idRegion;
+
+	@Field(name = "color_id")
+	private int idCouleur;
 	
 	@Field(name = "name")
 	private String nom;

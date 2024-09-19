@@ -11,9 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import fr.eni.tp_avis.dal.AvisRepository;
-import lombok.extern.slf4j.Slf4j;
 
-@Slf4j
 @SpringBootTest
 @TestMethodOrder(MethodOrderer.MethodName.class)
 class TestDocument {
@@ -40,8 +38,8 @@ class TestDocument {
 		assertThat(avisDB.getCommentaire()).isNotNull();
 		assertThat(avisDB.getCommentaire()).isNotBlank();
 		assertThat(avisDB.getDate()).isNotNull();
-		
-		log.info(avisDB.toString());
+
+		System.out.println(avisDB.toString());
 	}
 
 	@Test
@@ -49,6 +47,6 @@ class TestDocument {
 		List<Avis> listeAvis = avisRepository.findAll();
 		assertThat(listeAvis).isNotNull();
 		assertThat(listeAvis).isNotEmpty();
-		log.info(listeAvis.toString());
+		System.out.println(listeAvis.toString());
 	}
 }
